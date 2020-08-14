@@ -1,0 +1,260 @@
+-En python no es necesario poner un punto y coma al final de la linea.
+-Si se quiere poner varias instrucciones en una linea se usa el ";"
+-Los comentarios se ponen con el simbolo de "#"
+	#Este es un comentario y no se toma en cuenta en el programa
+-Esto no sirve mucho, pero igual lo explico: SI queremos seguir una linea
+ debajo de otra utilizamos el simbolo "\", por ejemplo:
+	Mi_nombre = "Sergio Augusto\
+	leon urrutia"
+
+IDENTACION: Es la tabulacion, en python la tabulacion es muy importante,
+	    si la tabulacion no es buena el programa no va a funcionar.
+
+********** AHORA VAMOS A APRENDER CONCEPTOS BASICOS ****************
+
+TIPOS:
+	Numericos:
+		ENteros (int)
+		FLotante (float)
+		complejos
+	Textos:
+
+	Booleanos:
+		True
+		False
+Operadores:
+	Aritmeticos:
+		+,-,*,/,%(modulo,resto de divison),**(exponente),//(division entera)
+	COmparacion:
+		 ==,!=,<,>,>=,<=
+	Logicos:
+		 AND, NOT, OR
+	Asigacion:
+		=(igual),+=(Incremento),-=(decremento),/=,*=,%=,**=,//=
+	Especiales:
+		IS, IS NOT, IN, NOT IN
+Variables:
+Se compone por dos partes: el contenido y el contenedor
+	numero=5
+	EL contenedor es "numero" y el contenido es 5
+para las variables en python el tipo de dato esta determinado por
+el contenido y NO por el contenedor. para el ejemplo anterior la variable
+es de tipo int, porque el contenido es un numero entero (int).
+
+************** Como declarar variables **********************
+nombre = "Sergio"
+type(nombre) => Esta funcion devuelve el tipo de variable que es "nombre"
+
+ SI queremos que un texto se muestre con saltos de line utilizamos """
+	mensaje="""Este es un mensaje
+		extenso para usar el 
+		salto de linea"""
+	print(mensaje)	#Mostraria el mensaje con los saltos de linea
+
+************* IF ********************
+
+numero1=5
+numero2=10
+
+if numero1>numero2:
+	print("El numero 1 es mayor al numero 2")
+else:
+	print("El numero 2 es mayor al numero 1")
+
+*********** FUNCIONES ****************
+
+Una funcion es un conjunto de lineas de codigo que cumplen una funcion, 
+estas funciones pueden devolver o no valores. Tambien se le denomina "Método"
+siempre y cuando se encuentren definidas dentro de una clase.
+
+-Sirve para reutilizar lineas de codigo
+
+SINTAXIS:
+	def nombre_funcion():	#Dentro del parentesis van los parametros
+		instrucciones de la funcion
+		return(opcional)
+Ejemplo:
+	def mensaje():		#Aqui definimos la funcion
+		print("Este texto se va a repetir varias veces")
+		print("Este texto tambien se repite varias veces")
+	
+	mensaje()		#EN esta linea llamamos a la funcion
+	mensaje()
+	...
+
+Ejemplo2:
+	def suma(num1,num2):
+		res=num1+num2
+		return res
+	
+	print(suma(10,5))
+
+	print(suma(100,-10))
+
+****************** LISTAS ****************
+Una arreglo que nor permite almacenar varios espacios de almacenamiento.
+-En python podemos guardar DIFERENTES TIPOS DE DATOS en una misma lista
+	lista_variada=["Juan",4,true,72,"Alejandro"]
+
+SINTAXIS
+	nombre_lista= [elem1,elem2,elem3...]
+	#Las posiciones empiezan desde cero
+	#Es decir que elem1 esta en la posicion 0
+EJEMPLO:
+	lista_nombres=["Sergio","Maria", "DIego", "Jose"]
+	# CADA NOMBRE ESTA UBICADO EN UNA POSICION DE LA LISTA, LA POSICION
+	# PUEDE SER POSITIVA O NEGATIVA, COMO SE MIRA A CONTINUACION.
+	#lista_nombres=[0,1,2,3]
+	#lista_nombres=[-4,-3,-2,-1]
+
+	print(lista_nombres)	#Muestra toda la lista
+	print(lista_nombres[2]) #Muestraria "DIego", Porque es la posicion 2
+	print(lista_nombres[-4] #Muestra "Sergio" porque es la posicion -4
+
+
+PORCION DE LISTA:
+Sirve para ver solo un pedazo de la lista.
+	
+	print(lista_nombres[0:3]) #Muestra posiciones 0,1 y 2 de la lista
+
+	print(lista_nombres[2:]) #Muestra posiciones 2 en adelante
+
+AGREGAR ELEMENTOS A LISTA
+	
+	lista_nombres.append("Ale") #Agrega el elemento al final de la lista
+	
+	lista_nombres.insert(2,"Ale") #Agrega el elemento despues de la posicion 2
+
+	lista_nombres.extend(["Ale","Juan"]) #Agg varios elementos a la lista
+
+	print(lista_nombres.index("Diego")) #Devuelve la posicion de Diego
+
+	print("pepe" in lista_nombres) #Dice si pepe esta en la lista_nombres
+
+	lista_nombres.remove(2) 	#Elimina una posicion de la lista
+
+	lista_nombres.pop()		#Elimina el elemento final
+
+SUMA DE LISTAS (Concatenar):
+	milista1=[.....]
+	milista2=[...]
+
+	milista3=milista1+milista2
+
+MULTIPLICAR LISTAS
+	milista1=[...]*3
+	print(milista1[:]) 	#Imprime 3 veces la misma lista
+
+*************************** TUPLAS ************************
+Las tuplas son parecidas a las listas. Utiliza parentesis y 
+pueden contener cualquier tipo de dato dentro.
+-Son listas que NO se pueden modificar DE NINGUNA MANERA
+-Si podemos extraer los valores que estan dentro de la tupla.
+
+Ventajas:
+-Es rapida a la hora de usarla
+-Ocupa menos espacio de memoria
+-Se puede buscar elementos de la tupla con index, asi como las listas
+-Se puede usar como clave de un diccionario.
+
+SINTAXIS:
+	nombre_tupla=(elem1,elem2,elem3....) #Las posiciones van de 0-(n-1)
+
+Ejemplo: 
+	mitupla=("Sergio",123,true,10.25,"hola")
+	print(mitupla[1])	#IMprime la posicion 1 de la tupla
+
+COnvertir tupla a lista ó viseversa
+	milista=list(mitupla)
+	mitupla2=tuple(milista)
+
+VERIFICAR SI EXISTE UN DATO EN LA TUPLA
+	print("Sergio" in mitupla)
+CUANTOS ELEMENTOS HAY EN LA TUPLA
+	print(mitupla.count(123)) #Muestra cuantas veces esta 13 en la tupla
+LONGITUD de la tupla
+	print(len(mitupla))
+
+
+****************** DICCIONARIOS ***************************
+
+SOn estructuras de datos como las listas, 
+pero se hace una asociacion de tipo "CLAVE:VALOR"
+Esto significa que a cada valor se le asigna una clave única
+y podemos meter diccionarios dentro de diccionarios.
+
+SINTAXIS:
+	midiccionario={"CLAVE1":"Valor1","valor2",..", 
+			"CLAVE2":"Valor1","Valor2"}
+MOSTRAR DATOS DE DEL DICCIONARIO
+	print(midiccionario(CLAVE))
+
+MODIFICAR DICCIONARIO
+	
+	midiccionario["CLAVE1"]="Valor5"
+ELIMINAR ELEMENTO
+	del midiccionario["CLAVE1"]
+
+EJEMPLO:
+
+	mitupla=("España","Francia","UK","Alemania")
+	midiccionario={mitupla[0]:"Madrid", mitupla[1]:"Paris"....}
+
+METODOS:
+	print(midiccionario.keys()) #Imprime las claves del dicci.
+	print(midiccionario.values()) #Imprime los valores de las claves
+	print(len(midiccionario)) #IMprime la longitud del DIccionario
+
+
+*************** CONDICIONAL IF, if-else, if-elif-else  *******************
+Esta condicion permite cambiar el flujo del programa, en base a unas
+condiciones.
+ES MUY IMPORTANTE USAR LA TABULACION (INDENTACION) PARA QUE FUNCIONE
+
+SINTAXIS:
+	if condicion :
+		instrucciones
+	else:
+		instrucciones
+	.
+	.
+	.
+EJEMPLO:
+
+	edad=int(input("Ingrese su edad: ")) #Uso int, porque por defecto
+					     #input() lee datos STR y hay que convertirlo a int
+	if edad<18:
+		print("Usted es menor de edad")
+	else:
+		print("Usted es mayor de edad")
+
+AMBITO DE PROGRAMACION:
+	EL ambito de prgramacion nos determina en donde funcionan las
+	variables de programacion, osea que una variable que cree
+	dentro de un metodo, if o bucle SOLO VA A FUNCIONAR DENTRO
+	DE ESE BLOQUE, fuera de eso esa variable ya no va a funcionar
+
+
+EJEMPLO2: 
+
+	nota=int(input("Ingrese su nota: ")) #Uso int, porque por def$
+                                         #input() lee datos STR y$
+        if nota<5:
+                print("Pesimo")
+        elif 5<=nota<8:
+                print("raspado")
+	else:
+		print("Muy bien")
+
+
+******************** CONCATENAR  ***********************
+EDAD=int(input("INgrese su edad: ")
+
+print("Su edad es igual a: " + str(EDAD))
+
+
+
+
+
+
+

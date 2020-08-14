@@ -1,0 +1,113 @@
+201700722-Tareas980
+*****************Representacion de objetos*****************
+matriz([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]):
+
+1 2 3 4 5 
+6 7 8 9 10 
+11 12 13 14 15 
+None
+
+matriz([1,2,3,4,...,50])
+TypeError 'int' object is not iterable
+*********************************************************
+
+*********************Sobrecarga de Operadores************************
+    | 4 5 98 45 |            | 5 8 65 98 |
+A = | 7 9 12 35 |        B = | 7 1 18 65 |
+    | 1 0 74 96 |            | 9 0 87 75 |
+
+C = | 99  84  1|         D = | 32 51 64 84 98 65 75 32 15 85 |
+    | 84  98  5|
+
+    |   12 32  15  32  48  |
+    |   65 84  65  48  0   |
+F = |   1   8  45  59  130 |
+    |   58 65  12  35  4   |
+    |   87 22  44  77  99  |
+
+
+9 13 163 143 
+14 10 30 100 
+10 0 161 171 
+++++++++++suma++++++++++++
+A + B =
+respuesta:
+correcta
+[[9, 13, 163, 143], [14, 10, 30, 100], [10, 0, 161, 171]]
+        Nota:    10/10
+
+-1 -3 33 -53 
+0 8 -6 -30 
+-8 0 -13 21 
+++++++++++resta++++++++++++
+A - B =
+respuesta:
+correcta
+[[-1, -3, 33, -53], [0, 8, -6, -30], [-8, 0, -13, 21]]
+        Nota:   10/10
+
+9801 8316 99 
+8316 9702 495 
+++++++++++mul escalar++++++++++++
+C * 99 =
+respuesta:
+correcta
+[[9801, 8316, 99], [8316, 9702, 495]]
+        Nota:   10/10
+
+985 1251 10784 7491 
+1027 1302 9778 7690 
+++++++++++mul matricial++++++++++++
+C * A =
+respuesta:
+correcta
+[[985, 1251, 10784, 7491], [1027, 1302, 9778, 7690]]
+        Nota:   10/10
+
+******************** Metodos ********************
+++++++++++Determinante++++++++++++
+det(F) =
+respuesta:
+ErrorDimMatrix:El tamaño de la matriz es muy grande, 5 no es menor a 4   
+correcta
+28349091
+        Nota:   7/10
+
+++++++++++Matriz Inversa++++++++++++
+F.inversa()
+respuesta:
+ErrorInvMatrix:Lo siento, no pude hacer la inversa de la matriz :(   
+correcta
+[[-0.35335, -0.03541, 0.17067, 0.21959, -0.06166], [-0.22677, -0.02295, 0.12517, 0.16191, -0.06095], [-0.1783, 0.00223, 0.09006, 0.08576, -0.03528], [1.11681, 0.10594, -0.57212, -0.69683, 0.23794], [-0.42846, -0.04716, 0.22716, 0.27492, -0.09155]]
+        Nota:   0/10
+
+******************** Excepsiones ********************
+Nota completa 3 o mas excepsiones generadas correctamente
+Excepciones creadas por Estudiante
+
+++++++++++ argumentos no validos ++++++++++
+matriz('hola')
+No levanto excepsion
+
+++++++++++ suma diferentes dimensiones ++++++++++
+matriz(A)+matriz(F)
+ErrorDimensional Las longitudes de las filas y columnas no coinciden
+
+++++++++++ Multiplicacion ++++++++++
+matriz(D)*matriz(A)
+TypeError object of type 'int' has no len()
+
+++++++++++ Determinante Matriz no cuadrada ++++++++++
+matriz(D).determinante()
+TypeError object of type 'int' has no len()
+
+++++++++++ Inversa a Matriz no cuadrada ++++++++++
+matriz(B).inversa()
+ErrorSquareMatrix Debe ser una matriz cuadrada 3 ~= 4
+
+++++++++++ Ingreso matriz asimetrica ++++++++++
+X = matriz([[1,4,5],[1,4,4],[5,4],[1,4,8]])
+No levanto excepsion
+     Nota:    20/30
+************************************************************
+Nota final:      77/100
